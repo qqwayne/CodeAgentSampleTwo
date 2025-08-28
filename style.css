@@ -1,0 +1,161 @@
+/* Calculator App Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator {
+    background: #2c3e50;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.display {
+    margin-bottom: 20px;
+}
+
+#display {
+    width: 100%;
+    height: 80px;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 0 20px;
+    border: none;
+    border-radius: 12px;
+    background: #34495e;
+    color: #ecf0f1;
+    font-weight: bold;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#display::placeholder {
+    color: #7f8c8d;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    height: 70px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Number buttons */
+.btn.number {
+    background: #3498db;
+    color: white;
+}
+
+.btn.number:hover {
+    background: #2980b9;
+}
+
+/* Operator buttons */
+.btn.operator {
+    background: #e67e22;
+    color: white;
+}
+
+.btn.operator:hover {
+    background: #d35400;
+}
+
+/* Clear buttons */
+.btn.clear {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn.clear:hover {
+    background: #c0392b;
+}
+
+/* Equals button */
+.btn.equals {
+    background: #27ae60;
+    color: white;
+    grid-column: span 2;
+}
+
+.btn.equals:hover {
+    background: #229954;
+}
+
+/* Zero button spans two columns */
+.btn.zero {
+    grid-column: span 2;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 20px;
+        max-width: 350px;
+    }
+    
+    #display {
+        height: 70px;
+        font-size: 2rem;
+        padding: 0 15px;
+    }
+    
+    .btn {
+        height: 60px;
+        font-size: 1.2rem;
+    }
+    
+    .buttons {
+        gap: 10px;
+    }
+}
+
+/* Animation for display changes */
+#display {
+    transition: all 0.2s ease;
+}
+
+#display.error {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Subtle glow effect for focused elements */
+.btn:focus {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
